@@ -8,6 +8,7 @@ import com.SpringBoot.Practice.test.CallMeForTesting;
 import com.SpringBoot.Practice.test.EmailSender;
 import com.SpringBoot.Practice.test.Hello;
 import com.SpringBoot.Practice.test.Helper;
+import com.SpringBoot.Practice.test.OrderService;
 
 @SpringBootApplication
 public class PracticeApplication {
@@ -27,5 +28,7 @@ public class PracticeApplication {
 		CallMeForTesting callMeForTesting = context.getBean(CallMeForTesting.class);
 		System.out.println(callMeForTesting.callMe());
 
+		OrderService service = context.getBean(OrderService.class);
+		System.out.println(service.placeOrder());
 	}
 }
