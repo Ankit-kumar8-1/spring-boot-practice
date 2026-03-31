@@ -1,19 +1,18 @@
-package com.SpringBoot.Practice.test;
+package com.SpringBoot.Practice.Test;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EmailSender {
-    public String emailProvider;
 
-    @Value("${app.email.message}")
-    public String emailMessage;
+    private final AppProperties appConfig;
 
-    public EmailSender(String emailProvider) {
-        this.emailProvider = emailProvider;
+    public EmailSender(AppProperties appConfig) {
+        this.appConfig = appConfig;
     }
 
-    public String sendEmail() {
-        return "Email sent using " + emailProvider + " with message: " + emailMessage;
+    public void sendEmail() {
+        System.out.println("Sending email using provider: " + appConfig.getProvider());
+        System.out.println("Email message: " + appConfig.getMessage());
     }
-
 }
