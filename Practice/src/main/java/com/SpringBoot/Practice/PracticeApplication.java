@@ -34,7 +34,5 @@ public class PracticeApplication {
 		DataBasesService dataBasesService = context.getBean(DataBasesService.class);
 		dataBasesService.queryDatabase();
 
-		((ConfigurableApplicationContext) context).close();
-
 	}
 }
